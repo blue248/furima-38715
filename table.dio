@@ -121,14 +121,14 @@
                         <mxPoint x="340" y="480" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="86" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" target="45" edge="1">
-                    <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="240" y="260.49" as="sourcePoint"/>
-                        <mxPoint x="556.96" y="260" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="72" value="belongs_to :user&lt;br&gt;belongs_to :item&lt;br&gt;has_one :destination" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;fillColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="630" y="552" width="160" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="45">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="240" y="238" as="sourcePoint"/>
+                        <mxPoint x="340" y="138" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
