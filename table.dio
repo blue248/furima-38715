@@ -106,7 +106,7 @@
                         <mxPoint x="640" y="340" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="69" value="has_many :items&lt;br&gt;has_one :order" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;fillColor=#FFFFFF;" parent="1" vertex="1">
+                <mxCell id="69" value="has_many :items&lt;br&gt;has_many :orders" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;fillColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="230" y="10" width="150" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="70" value="belongs_to :user&lt;br&gt;has_one :order" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=default;fillColor=#FFFFFF;" parent="1" vertex="1">
