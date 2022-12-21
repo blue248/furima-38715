@@ -34,25 +34,29 @@ RSpec.describe Item, type: :model do
       it 'priceが空では出品できない' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price can't be blank", "Price is invalid. Input half-width characters.", "Price is out of setting range")
+        expect(@item.errors.full_messages).to include("Price can't be blank", 'Price is invalid. Input half-width characters.',
+                                                      'Price is out of setting range')
       end
-      
+
       it 'priceに全角数字が含まれていると出品できない' do
         @item.price = '５００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters.", "Price is out of setting range")
+        expect(@item.errors.full_messages).to include('Price is invalid. Input half-width characters.',
+                                                      'Price is out of setting range')
       end
 
       it 'priceに全角文字が含まれていると出品できない' do
         @item.price = 'あああああ'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters.", "Price is out of setting range")
+        expect(@item.errors.full_messages).to include('Price is invalid. Input half-width characters.',
+                                                      'Price is out of setting range')
       end
 
       it 'priceに半角文字が含まれていると出品できない' do
         @item.price = 'aaaaaa'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters.", "Price is out of setting range")
+        expect(@item.errors.full_messages).to include('Price is invalid. Input half-width characters.',
+                                                      'Price is out of setting range')
       end
 
       it 'priceが¥300未満では出品できない' do
