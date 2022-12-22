@@ -28,7 +28,7 @@
       <% if current_user.id == @item.user_id %>
         <%= link_to "商品の編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
         <p class="or-text">or</p>
-        <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
+        <%= link_to "削除", "/items/#{@item.id}", method: :delete, class:"item-destroy" %>
       <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合のみ表示する %>
     
       <%# ログイン状態且つ、自身が出品していない販売中商品の場合にのみ表示する %>
