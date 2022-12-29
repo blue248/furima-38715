@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
 
   def edit
     redirect_to action: :index unless @item.user_id == current_user.id
+
+    # 商品が売却済みの時、編集パスを入力してもトップページに遷移する
+    redirect_to root_path if @item.order.present?
   end
 
   def update
@@ -35,9 +38,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.user_id == current_user.id
-      @item.destroy
-    end
+    @item.destroy if @item.user_id == current_user.id
     redirect_to root_path
   end
 
