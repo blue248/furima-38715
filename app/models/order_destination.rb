@@ -1,6 +1,6 @@
 class OrderDestination
   include ActiveModel::Model
-  attr_accessor :post_code, :prefecture_id, :city, :block, :building_name, :phone_no, :user_id, :item_id
+  attr_accessor :post_code, :prefecture_id, :city, :block, :building_name, :phone_no, :user_id, :item_id, :token
 
   with_options presence: true do
     validates :post_code, format: { with: /\A\d{3}-\d{4}\z/, message: 'is invalid. Enter it as follows (e.g. 123-4567)' }
@@ -10,6 +10,7 @@ class OrderDestination
     validates :phone_no, format: { with: /\A\d{10,11}\z/, message: 'Input only number' }
     validates :user_id
     validates :item_id
+    validates :token
   end
 
   def save
