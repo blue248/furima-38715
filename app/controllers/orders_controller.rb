@@ -5,6 +5,9 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
     @order_destination = OrderDestination.new
     redirect_to root_path if @item.user_id == current_user.id
+
+    # 商品が売却済みの時、購入パスを入力してもトップページに遷移する
+    redirect_to root_path if @item.order.present?
   end
 
   def create
@@ -28,11 +31,11 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-      Payjp::Charge.create(
-        amount: @item.price,  # 商品の値段
-        card: order_params[:token],    # カードトークン
-        currency: 'jpy'                 # 通貨の種類（日本円）
-      )
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp::Charge.create(
+      amount: @item.price, # 商品の値段
+      card: order_params[:token], # カードトークン
+      currency: 'jpy'                 # 通貨の種類（日本円）
+    )
   end
 end
